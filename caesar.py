@@ -42,14 +42,14 @@ def caesar_decrypt(cipher_text, shift):  # Decryption function
 def generate_random_key():
     return random.randint(1, len(ALPHABET) - 1)
 
-# Demo
-key = generate_random_key()
-message = "cryptology."
-print(f"===== Caesar encryption demo =====\nMessage: {message}, Key: {key}")
-encrypted_message = caesar_encrypt(message, key)
-print(f"Encrypted: {encrypted_message}")
-print(f"---------------------------------------------")
+   # User input for plaintext and key
+user_plaintext = input("Enter the plaintext: ")
+user_key = int(input("Enter the key (a positive integer): "))
 
-decrypted_message = caesar_decrypt(encrypted_message, key)
-print(f"===== Caesar decryption demo =====\nEncrypted Message: {encrypted_message}, Key: {key}")
+# Encrypt and display
+encrypted_message = caesar_encrypt(user_plaintext, user_key)
+print(f"Encrypted: {encrypted_message}")
+
+# Decrypt and display
+decrypted_message = caesar_decrypt(encrypted_message, user_key)
 print(f"Decrypted: {decrypted_message}")
